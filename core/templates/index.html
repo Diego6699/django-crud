@@ -10,7 +10,9 @@
     Inicio
     <ul>
         {% for pessoa in pessoas %}
-            <li>{{pessoa.id}} - {{ pessoa.nome  }}</li>
+            <li>{{pessoa.id}} - {{pessoa.nome }}</li>
+            <a href="{% url 'editar' pessoa.id %}">Editar</a>
+            <a href="{% url 'delete' pessoa.id %}">Delete</a>
         {% endfor %}
     </ul>
     <form action="{% url 'salvar' %}" method = "POST">
